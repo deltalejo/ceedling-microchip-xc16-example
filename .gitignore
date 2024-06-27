@@ -1,0 +1,5 @@
+build/
+env.yml
+.ruby-version
+MPLABXLog*
+defmplabxtrace*
