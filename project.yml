@@ -9,11 +9,11 @@
 :project:
   # how to use ceedling. If you're not sure, leave this as `gem` and `?`
   :which_ceedling: gem
-  :ceedling_version: 0.32.0
+  :ceedling_version: 1.0.0
 
   # optional features. If you don't need them, keep them turned off for performance
   :use_mocks: true
-  :use_test_preprocessor: true
+  :use_test_preprocessor: :all
   :use_backtrace: :none
   :use_decorators: :auto #Decorate Ceedling's output text. Your options are :auto, :all, or :none
 
@@ -44,10 +44,10 @@
   :use_assembly: false
 
 # further details to configure the way Ceedling handles release code
-:release_build:
-  :output: MyApp.out
-  :use_assembly: false
-  :artifacts: []
+# :release_build:
+#   :output: MyApp.out
+#   :use_assembly: false
+#   :artifacts: []
 
 # Plugins are optional Ceedling features which can be enabled. Ceedling supports
 # a variety of plugins which may effect the way things are compiled, reported, 
@@ -78,12 +78,12 @@
     - mdb
 
 # Specify which reports you'd like from the log factory
-:report_tests_log_factory:
-  :reports:
-    - json 
-    - junit 
-    - cppunit 
-    - html 
+# :report_tests_log_factory:
+#   :reports:
+#     - json 
+#     - junit 
+#     - cppunit 
+#     - html 
 
 # override the default extensions for your system and toolchain
 :extension:
