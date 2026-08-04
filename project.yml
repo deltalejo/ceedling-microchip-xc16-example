@@ -9,7 +9,7 @@
 :project:
   # how to use ceedling. If you're not sure, leave this as `gem` and `?`
   :which_ceedling: gem
-  :ceedling_version: 1.0.0
+  :ceedling_version: '?'
 
   # optional features. If you don't need them, keep them turned off for performance
   :use_mocks: true
@@ -132,17 +132,21 @@
   :use_test_definition: false 
 
 # Configure additional command line flags provided to tools used in each build step
-# :flags:
+:flags:
 #   :release:
 #     :compile:         # Add '-Wall' and '--02' to compilation of all files in release target
 #       - -Wall
 #       - --O2
-#   :test:
-#     :compile:
-#       '(_|-)special': # Add '-pedantic' to compilation of all files in all test executables with '_special' or '-special' in their names
-#         - -pedantic
-#       '*':            # Add '-foo' to compilation of all files in all test executables
-#         - -foo
+  :test:
+    :compile:
+      # '(_|-)special': # Add '-pedantic' to compilation of all files in all test executables with '_special' or '-special' in their names
+      #   - -pedantic
+      # '*':            # Add '-foo' to compilation of all files in all test executables
+      #   - -foo
+      :*:
+        - -ansi
+      :test/test_:
+        - -std=c99
 
 # Configuration Options specific to CMock. See CMock docs for details
 :cmock:
@@ -217,7 +221,7 @@
 # performing the rest of its tasks.
 :environment:
   - :device: PIC24F08KL200
-  - :dfp: PIC24F-KA-KL-KM_DFP/1.5.253/xc16
+  - :dfp: PIC24F-KA-KL-KM_DFP/1.6.395/xc16
 
 # LIBRARIES
 # These libraries are automatically injected into the build process. Those specified as
