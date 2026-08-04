@@ -6,13 +6,13 @@
     :arguments:
       - -I"${5}"
       - -D${6}
-      - -mcpu=#{ENV['DEVICE'].sub(/^\D+/, "")}
+      - -mcpu=#{ENV['DEVICE'].upcase.sub(/^\D+/, "")}
       - -mdfp=#{File.join(ENV['MPLABX_PATH'], 'packs/Microchip', ENV['DFP'])}
       - -g
-      - -std=c99
       - -Wall
       - -Wextra
       - -Werror
+      - -Wno-pragmas
       - -merrata=all
       - -ffunction-sections
       - -MMD
@@ -27,9 +27,9 @@
     :arguments:
       - ${5}
       - ${4}
-      - -mcpu=#{ENV['DEVICE'].gsub(/^\D+/, "")}
+      - -mcpu=#{ENV['DEVICE'].upcase.gsub(/^\D+/, "")}
       - -mdfp=#{File.join(ENV['MPLABX_PATH'], 'packs/Microchip', ENV['DFP'])}
-      - -Tp#{ENV['DEVICE'].gsub(/^\D+/, "")}.gld
+      - -Tp#{ENV['DEVICE'].upcase.gsub(/^\D+/, "")}.gld
       - -Wl,--gc-sections
       - -Wl,-Map=${3}
       - -o ${2}
