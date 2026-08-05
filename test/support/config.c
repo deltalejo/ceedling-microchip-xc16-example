@@ -26,4 +26,4 @@
 #pragma config BORV = V30
 #pragma config MCLRE = ON
 
-#pragma config ICS = PGx3
+#pragma config ICS = PGx2
